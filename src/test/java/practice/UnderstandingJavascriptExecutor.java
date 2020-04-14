@@ -40,6 +40,7 @@ public class UnderstandingJavascriptExecutor {
         //return keyword before the script is for Selenium to know that it needs to bring back information
         String pageTitle = js.executeScript("return document.title").toString();
         System.out.println(pageTitle);
+        driver.quit();
     }
 
     @Test(priority = 1,description = "Clicking on an element")
@@ -50,6 +51,7 @@ public class UnderstandingJavascriptExecutor {
 
         JavascriptExecutor js = (JavascriptExecutor)driver;
         js.executeScript(" document.getElementById('catnav-primary-link-891').click();");
+        driver.quit();
 
     }
 
@@ -63,6 +65,7 @@ public class UnderstandingJavascriptExecutor {
         //return keyword before the script is for Selenium to know that it needs to bring back information
         String pageURL = js.executeScript("return document.URL").toString();
         System.out.println(pageURL);
+        driver.quit();
     }
 
     @Test(description = "return element text")
@@ -76,7 +79,9 @@ public class UnderstandingJavascriptExecutor {
        String elementText= js.executeScript("return document.getElementById('catnav-primary-link-11049').innerHTML").toString();
        elementText=elementText.trim();
         System.out.println(elementText);
+        driver.quit();
     }
+
 
     @Test(description = "scroll an element into view")
     public void test6(){
@@ -86,6 +91,7 @@ public class UnderstandingJavascriptExecutor {
 
         JavascriptExecutor js = (JavascriptExecutor)driver;
         js.executeScript("document.getElementById('email-list-signup-email-input').scrollIntoView();");
+        driver.quit();
     }
 
 
